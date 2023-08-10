@@ -25,5 +25,5 @@ CREATE TABLE employee(
   first_name VARCHAR(30) NOT NULL
   last_name VARCHAR(30) NOT NULL
   manager_id INT
-  if NOT EXISTS manager_id NULL
+  if NOT EXISTS manager_id NUL
 );

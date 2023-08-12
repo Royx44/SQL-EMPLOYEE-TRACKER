@@ -16,14 +16,17 @@ CREATE TABLE department (
 CREATE TABLE roles(
   id INT PRIMARY KEY,
   title VARCHAR(30) NOT NULL
-  salary VARCHAR(30) NOT NULL
+  salary DECIMAL(10, 2) NOT NULL,
   department_id INT
+  FOREIGN KEY (department_id) REFERENCES department(id)
 );
 
 CREATE TABLE employee(
   id INT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL
   last_name VARCHAR(30) NOT NULL
+  roles_id INT,
   manager_id INT
-  if NOT EXISTS manager_id NUL
+  FOREIGN KEY (roles_id) REFERENCES roles(id),
+  FOREIGN KEY (manager_id) REFERENCES employee(id)
 );
